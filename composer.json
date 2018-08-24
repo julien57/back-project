@@ -1,0 +1,10 @@
+{
+    "name": "julienmontel/project",
+    "authors": [
+        {
+            "name": "Julien Montel",
+            "email": "julien.montel@sfr.fr"
+        }
+    ],
+    "require": {}
+}
