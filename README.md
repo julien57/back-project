@@ -8,7 +8,7 @@ REST web service.</p>
 <ul>
 <li>PHP 7.1</li>
 <li>This project use composer for his autoloader</li>
-<ul>
+</ul>
 
 <h2>Project Status</h2>
 
