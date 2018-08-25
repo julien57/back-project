@@ -1,21 +1,24 @@
 <?php
 // For JSON : it's ok for URL's in "/users", limit "/users?limit={{limit}}", filter "/users?name={{filter}}"
-
 // For CSV : it's ok for "/users", limit "/users?limit={{limit}}"
 
-//header("Content-Type:application/json");
+header("Content-Type:application/json");
 
 use Project\RestCsv;
 use Project\RestJson;
 
 require __DIR__ . '/vendor/autoload.php';
 
+// For use Json, uncomment this code
 /*
 $takers = new RestJson();
 $jsonCredentials = file_get_contents(RestJson::JSON_FILE);
 $arrowTakers = json_decode($jsonCredentials, true);
 */
 
+
+// For use CSV, uncomment this code
+/*
 $takers = new RestCsv();
 $row = 1;
 if (($handle = fopen(RestCsv::CSV_FILE, "r")) !== FALSE) {
@@ -26,7 +29,7 @@ if (($handle = fopen(RestCsv::CSV_FILE, "r")) !== FALSE) {
     }
 }
 $arrowTakers = $listTakers;
-
+*/
 
 if (isset($_GET['limit']) || isset($_GET['offset']) || isset($_GET['name'])) {
 

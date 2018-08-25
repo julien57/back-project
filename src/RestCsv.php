@@ -6,6 +6,12 @@ class RestCsv implements FormatInterface
 {
     const CSV_FILE = 'api/testtakers.csv';
 
+    /**
+     * @param array $takers
+     * @param int $limit
+     * @param int|null $offset
+     * @return array
+     */
     public function getLimitTakers(array $takers, int $limit, ?int $offset = 0): array
     {
         if (is_null($limit)) {
@@ -37,7 +43,12 @@ class RestCsv implements FormatInterface
         return $jsonTakers;
     }
 
-    public function getByName(array $takers, string $name)
+    /**
+     * @param array $takers
+     * @param string $name
+     * @return array
+     */
+    public function getByName(array $takers, string $name): array
     {
         foreach ($takers as $taker) {
             if (!is_array($taker)) {
@@ -55,7 +66,12 @@ class RestCsv implements FormatInterface
         return $user;
     }
 
-    public function getByOffset(array $takers, int $offset)
+    /**
+     * @param array $takers
+     * @param int $offset
+     * @return array
+     */
+    public function getByOffset(array $takers, int $offset): array
     {
         return array_slice($takers, $offset);
     }
